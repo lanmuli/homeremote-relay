@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HomeRemote 控制端</title><link rel="stylesheet" href="style.css"></head>
+<body><main><section id="login"><h1>HomeRemote</h1><p>连接到家中的电脑</p>
+<label>中继地址<input id="relay" placeholder="wss://remote.example.com/ws"></label>
+<label>房间号<input id="room" autocomplete="off"></label>
+<label>访问密钥<input id="secret" type="password" autocomplete="current-password"></label>
+<button id="connect">连接</button><div id="status">尚未连接</div></section>
+<section id="desk" hidden><header><strong>远程桌面</strong><span id="live">连接中…</span><button id="disconnect">断开</button></header>
+<div id="screenWrap"><img id="screen" draggable="false" alt="远程屏幕"></div><p class="hint">点击画面后可使用鼠标和键盘。按 Ctrl+Alt+End 发送 Ctrl+Alt+Delete 的替代提示（安全桌面不受支持）。</p></section>
+</main><script src="app.js"></script></body></html>
+
