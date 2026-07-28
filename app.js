@@ -25,7 +25,7 @@ function coords(e) {
 }
 $('connect').onclick = () => {
   secretKey = $('secret').value;
-  if (!secretKey || secretKey.length < 16) return $('status').textContent = '访问密钥至少 16 个字符';
+  if (!secretKey || secretKey.length < 8) return $('status').textContent = '访问密钥至少 8 个字符';
   try { ws = new WebSocket($('relay').value); } catch { return $('status').textContent = '中继地址无效'; }
   $('status').textContent = '正在连接…';
   ws.onopen = () => ws.send(JSON.stringify({ type:'join', role:'controller', room:$('room').value }));
